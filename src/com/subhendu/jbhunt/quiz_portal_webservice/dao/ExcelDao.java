@@ -27,8 +27,8 @@ public class ExcelDao {
 				if(row.getRowNum()!=0) {
 					TeamBean teamBean = new TeamBean();
 					
-					teamBean.setTeamID((long)row.getCell(0).getNumericCellValue());
-					teamBean.setTeamName(row.getCell(1).getStringCellValue());
+					teamBean.setId((long)row.getCell(0).getNumericCellValue());
+					teamBean.setName(row.getCell(1).getStringCellValue());
 					teamBean.setCreatedBy(row.getCell(2).getStringCellValue());
 					teamBean.setCreatedDate(row.getCell(3).getDateCellValue());
 					teamBean.setBackgroundImageURL(row.getCell(4).getStringCellValue());
@@ -52,7 +52,7 @@ public class ExcelDao {
 		
 		List<TeamBean> allTeams = getAllTeams();
 		for(TeamBean team : allTeams) {
-			if(team.getTeamID() == teamID)
+			if(team.getId() == teamID)
 				return team;
 		}
 		

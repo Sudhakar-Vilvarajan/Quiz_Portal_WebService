@@ -3,8 +3,8 @@ package com.subhendu.jbhunt.quiz_portal_webservice.beans;
 import java.util.Date;
 
 public class TeamBean {
-	private long teamID;
-	private String teamName;
+	private long id;
+	private String name;
 	private Date createdDate;
 	private String createdBy;
 	private String backgroundImageURL;
@@ -14,17 +14,17 @@ public class TeamBean {
 	public void setBackgroundImageURL(String backgroundImageURL) {
 		this.backgroundImageURL = backgroundImageURL;
 	}
-	public long getTeamID() {
-		return teamID;
+	public long getId() {
+		return id;
 	}
-	public void setTeamID(long teamID) {
-		this.teamID = teamID;
+	public void setId(long id) {
+		this.id = id;
 	}
-	public String getTeamName() {
-		return teamName;
+	public String getName() {
+		return name;
 	}
-	public void setTeamName(String teamName) {
-		this.teamName = teamName;
+	public void setName(String name) {
+		this.name = name;
 	}
 	public Date getCreatedDate() {
 		return createdDate;
@@ -38,10 +38,10 @@ public class TeamBean {
 	public void setCreatedBy(String createdBy) {
 		this.createdBy = createdBy;
 	}
-	public TeamBean(long teamID, String teamName, Date createdDate, String createdBy, String backgroundImageURL) {
+	public TeamBean(long id, String name, Date createdDate, String createdBy, String backgroundImageURL) {
 		super();
-		this.teamID = teamID;
-		this.teamName = teamName;
+		this.id = id;
+		this.name = name;
 		this.createdDate = createdDate;
 		this.createdBy = createdBy;
 		this.backgroundImageURL = backgroundImageURL;
@@ -52,7 +52,7 @@ public class TeamBean {
 	
 	@Override
 	public String toString() {
-		return "TeamBean [teamID=" + teamID + ", teamName=" + teamName + ", createdDate=" + createdDate + ", createdBy="
+		return "TeamBean [id=" + id + ", name=" + name + ", createdDate=" + createdDate + ", createdBy="
 				+ createdBy + ", backgroundImageURL=" + backgroundImageURL + "]";
 	}
 	
