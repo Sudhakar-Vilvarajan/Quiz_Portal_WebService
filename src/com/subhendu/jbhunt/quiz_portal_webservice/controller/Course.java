@@ -31,6 +31,7 @@ public class Course extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
+    
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("Course GET route has been hit");
 		ResponceUtil.enrichResponceHeader(response);
