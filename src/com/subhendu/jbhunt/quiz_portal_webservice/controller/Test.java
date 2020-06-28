@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.subhendu.jbhunt.quiz_portal_webservice.utils.RequestUtil;
+
 /**
  * Servlet implementation class Test
  */
@@ -22,7 +24,7 @@ public class Test extends HttpServlet {
 //    
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-    	resp.getWriter().append("You hit the Root/Test GET route ").append(req.getPathInfo());
+    	resp.getWriter().append("You hit the Root/Test GET route.\n").append("Has id embeded : "+RequestUtil.hasIDEmbedded(req));
     	
     }
 
