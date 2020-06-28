@@ -11,14 +11,17 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.google.gson.Gson;
 import com.subhendu.jbhunt.quiz_portal_webservice.beans.ResponceBean;
+import com.subhendu.jbhunt.quiz_portal_webservice.service.CourseService;
 import com.subhendu.jbhunt.quiz_portal_webservice.utils.ResponceUtil;
 
 /**
  * Servlet implementation class Course
  */
-@WebServlet("/course")
+@WebServlet("/course/*")
 public class Course extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private CourseService courseService = new CourseService();
+	private Gson gson = new Gson();
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -37,7 +40,6 @@ public class Course extends HttpServlet {
 		ResponceUtil.enrichResponceHeader(response);
 		PrintWriter pw = response.getWriter();
 		ResponceBean responceBean = null;
-		Gson gson = new Gson();		
 		
 		responceBean = new ResponceBean("you are getting successfull responce from Course GET route ");
 		

@@ -65,17 +65,9 @@ public class Team extends HttpServlet {
 		ResponceUtil.enrichResponceHeader(response);
 		PrintWriter pw = response.getWriter();
 		ResponceBean responceBean = null;
-				
-//		ExcelDao excelDao = new ExcelDao();
-		Gson gson = new Gson();		
 		
-//		TeamBean teamBean = gson.fromJson(request.getReader(), TeamBean.class);
-//		try {
-			responceBean = new ResponceBean("Successfull responce from Team POST route");
-//		}
-//		catch (QuizPortalWebServiceException error) {
-//			responceBean = new ResponceBean(error);
-//		}
+		responceBean = new ResponceBean("Successfull responce from Team POST route");
+		
 		pw.print(gson.toJson(responceBean));
 		pw.close();
 		pw.flush();

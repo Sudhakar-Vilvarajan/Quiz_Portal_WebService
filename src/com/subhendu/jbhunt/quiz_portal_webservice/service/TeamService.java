@@ -28,7 +28,7 @@ public class TeamService {
 		}
 		
 		{
-			throw new QuizPortalWebServiceException(Context.ERROR_NO_TEAM_AVAILABLE + "for team ID : " + teamID);
+			throw new QuizPortalWebServiceException(Context.ERROR_NO_TEAM_AVAILABLE + " for team ID : " + teamID);
 		}
 	}
 }
