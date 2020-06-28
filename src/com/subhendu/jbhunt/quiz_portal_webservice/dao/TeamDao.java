@@ -45,17 +45,4 @@ public class TeamDao {
 		excelUtill.closeWorkbook(workbook);
 		return allTeams;
 	}
-	
-	
-	public TeamBean getTeamByID(long teamID) throws QuizPortalWebServiceException{
-		TeamBean teamBean = null;
-		
-		List<TeamBean> allTeams = getAllTeams();
-		for(TeamBean team : allTeams) {
-			if(team.getId() == teamID)
-				return team;
-		}
-		
-		return teamBean;
-	}
 }

@@ -13,6 +13,7 @@ import com.google.gson.Gson;
 import com.subhendu.jbhunt.quiz_portal_webservice.beans.ResponceBean;
 import com.subhendu.jbhunt.quiz_portal_webservice.exception.QuizPortalWebServiceException;
 import com.subhendu.jbhunt.quiz_portal_webservice.service.TeamService;
+import com.subhendu.jbhunt.quiz_portal_webservice.utils.RequestUtil;
 import com.subhendu.jbhunt.quiz_portal_webservice.utils.ResponceUtil;
 
 /**
@@ -42,7 +43,10 @@ public class Team extends HttpServlet {
 		ResponceBean responceBean = null;
 				
 		try {
-			responceBean = new ResponceBean(teamService.getAllTeam());
+			if(RequestUtil.hasEmbeddedID(request))
+				responceBean = new ResponceBean(teamService.getTeamByID(RequestUtil.getEmbededID(request)));
+			else
+				responceBean = new ResponceBean(teamService.getAllTeams());
 		}
 		catch (QuizPortalWebServiceException error) {
 			responceBean = new ResponceBean(error);
