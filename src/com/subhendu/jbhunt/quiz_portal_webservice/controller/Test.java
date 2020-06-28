@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class Test
  */
-@WebServlet({ "/test","/"})
+@WebServlet({ "/test/*"})
 public class Test extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -22,8 +22,15 @@ public class Test extends HttpServlet {
 //    
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-    	resp.getWriter().append("You hit the Root/Test route");
+    	resp.getWriter().append("You hit the Root/Test GET route ").append(req.getPathInfo());
     	
     }
 
+    
+    
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    	resp.getWriter().append("You hit the Root/Test POST route ").append(req.getPathInfo());
+    	
+    }
 }
