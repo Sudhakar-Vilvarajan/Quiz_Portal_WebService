@@ -13,7 +13,7 @@ import com.subhendu.jbhunt.quiz_portal_webservice.exception.QuizPortalWebService
 import com.subhendu.jbhunt.quiz_portal_webservice.utils.Context;
 import com.subhendu.jbhunt.quiz_portal_webservice.utils.ExcelUtil;
 
-public class ExcelDao {
+public class TeamDao {
 	public List<TeamBean> getAllTeams() throws QuizPortalWebServiceException{
 		List<TeamBean> allTeams = new ArrayList<TeamBean>();
 		

@@ -13,4 +13,6 @@ public class Context {
 	public static final String ERROR_DISCONNECT_DB = ERROR_INITIAL + "disconnecting DB";
 	public static final String ERROR_FETCH_ALL_TEAMS = ERROR_INITIAL + "fetching all teams";
 	
+	
+	public static final String ERROR_NO_TEAM_AVAILABLE = "No team available";
 }

@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.google.gson.Gson;
 import com.subhendu.jbhunt.quiz_portal_webservice.beans.ResponceBean;
 import com.subhendu.jbhunt.quiz_portal_webservice.beans.TeamBean;
-import com.subhendu.jbhunt.quiz_portal_webservice.dao.ExcelDao;
+import com.subhendu.jbhunt.quiz_portal_webservice.dao.TeamDao;
 import com.subhendu.jbhunt.quiz_portal_webservice.exception.QuizPortalWebServiceException;
 import com.subhendu.jbhunt.quiz_portal_webservice.utils.ResponceUtil;
 
@@ -40,7 +40,7 @@ public class TeamByID extends HttpServlet {
 		PrintWriter pw = response.getWriter();
 		ResponceBean responceBean = null;
 				
-		ExcelDao excelDao = new ExcelDao();
+		TeamDao teamDao = new TeamDao();
 		Gson gson = new Gson();		
 		
 		try {
@@ -51,7 +51,7 @@ public class TeamByID extends HttpServlet {
 			catch (NumberFormatException e) {
 				throw new QuizPortalWebServiceException("Not a vaild TeamID : " + request.getParameter("id"));
 			}
-			TeamBean searchedTeam = excelDao.getTeamByID(teamID);
+			TeamBean searchedTeam = teamDao.getTeamByID(teamID);
 			if(searchedTeam == null)
 				throw new QuizPortalWebServiceException("No team details found for TeamID : " + teamID);
 			else

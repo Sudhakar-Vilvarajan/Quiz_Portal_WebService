@@ -11,16 +11,18 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.google.gson.Gson;
 import com.subhendu.jbhunt.quiz_portal_webservice.beans.ResponceBean;
-import com.subhendu.jbhunt.quiz_portal_webservice.dao.ExcelDao;
 import com.subhendu.jbhunt.quiz_portal_webservice.exception.QuizPortalWebServiceException;
+import com.subhendu.jbhunt.quiz_portal_webservice.service.TeamService;
 import com.subhendu.jbhunt.quiz_portal_webservice.utils.ResponceUtil;
 
 /**
  * Servlet implementation class Team
  */
-@WebServlet("/team")
+@WebServlet("/team/*")
 public class Team extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private Gson gson = new Gson();
+	private TeamService teamService = new TeamService();
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -39,15 +41,13 @@ public class Team extends HttpServlet {
 		PrintWriter pw = response.getWriter();
 		ResponceBean responceBean = null;
 				
-		ExcelDao excelDao = new ExcelDao();
-		Gson gson = new Gson();		
-		
 		try {
-			responceBean = new ResponceBean(excelDao.getAllTeams());
+			responceBean = new ResponceBean(teamService.getAllTeam());
 		}
 		catch (QuizPortalWebServiceException error) {
 			responceBean = new ResponceBean(error);
 		}
+		
 		pw.print(gson.toJson(responceBean));
 		pw.close();
 		pw.flush();
