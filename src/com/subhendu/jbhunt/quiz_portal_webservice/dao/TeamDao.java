@@ -14,11 +14,12 @@ import com.subhendu.jbhunt.quiz_portal_webservice.utils.Context;
 import com.subhendu.jbhunt.quiz_portal_webservice.utils.ExcelUtil;
 
 public class TeamDao {
+	private ExcelUtil excelUtil = new ExcelUtil();
+	
 	public List<TeamBean> getAllTeams() throws QuizPortalWebServiceException{
 		List<TeamBean> allTeams = new ArrayList<TeamBean>();
 		
-		ExcelUtil excelUtill = new ExcelUtil();
-		XSSFWorkbook workbook = excelUtill.getWorkbook();
+		XSSFWorkbook workbook = excelUtil.getWorkbook();
 		try {
 			XSSFSheet sheet = workbook.getSheet(Context.TeamTable);
 			Iterator<Row> rowIterator = sheet.rowIterator();
@@ -42,7 +43,7 @@ public class TeamDao {
 			throw new QuizPortalWebServiceException(Context.ERROR_FETCH_ALL_TEAMS + " -> " + e.getLocalizedMessage());
 		}
 		
-		excelUtill.closeWorkbook(workbook);
+		excelUtil.closeWorkbook(workbook);
 		return allTeams;
 	}
 }
