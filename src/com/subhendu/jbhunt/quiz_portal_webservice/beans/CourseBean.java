@@ -2,24 +2,18 @@ package com.subhendu.jbhunt.quiz_portal_webservice.beans;
 
 public class CourseBean {
 	private long id;
-	private long teamID;
 	private String name;
 	private String description;
 	private int numberOfQuestions;
 	private int durationInMins;
 	private String createdBy;
 	private String createdDate;
+	private TeamBean team;
 	public long getId() {
 		return id;
 	}
 	public void setId(long id) {
 		this.id = id;
-	}
-	public long getTeamID() {
-		return teamID;
-	}
-	public void setTeamID(long teamID) {
-		this.teamID = teamID;
 	}
 	public String getName() {
 		return name;
@@ -57,28 +51,33 @@ public class CourseBean {
 	public void setCreatedDate(String createdDate) {
 		this.createdDate = createdDate;
 	}
-	public CourseBean(long id, long teamID, String name, String description, int numberOfQuestions, int durationInMins,
-			String createdBy, String createdDate) {
+	
+	@Override
+	public String toString() {
+		return "CourseBean [id=" + id + ", name=" + name + ", description=" + description + ", numberOfQuestions="
+				+ numberOfQuestions + ", durationInMins=" + durationInMins + ", createdBy=" + createdBy
+				+ ", createdDate=" + createdDate + ", team=" + team + "]";
+	}
+	public CourseBean(long id, String name, String description, int numberOfQuestions, int durationInMins,
+			String createdBy, String createdDate, TeamBean team) {
 		super();
 		this.id = id;
-		this.teamID = teamID;
 		this.name = name;
 		this.description = description;
 		this.numberOfQuestions = numberOfQuestions;
 		this.durationInMins = durationInMins;
 		this.createdBy = createdBy;
 		this.createdDate = createdDate;
+		this.team = team;
 	}
-	
+	public TeamBean getTeam() {
+		return team;
+	}
+	public void setTeam(TeamBean team) {
+		this.team = team;
+	}
 	public CourseBean() {
 		super();
-	}
-	
-	@Override
-	public String toString() {
-		return "CourseBean [id=" + id + ", teamID=" + teamID + ", name=" + name + ", description=" + description
-				+ ", numberOfQuestions=" + numberOfQuestions + ", durationInMins=" + durationInMins + ", createdBy="
-				+ createdBy + ", createdDate=" + createdDate + "]";
 	}
 	
 	
