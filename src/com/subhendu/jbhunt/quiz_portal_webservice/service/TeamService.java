@@ -9,6 +9,7 @@ import com.subhendu.jbhunt.quiz_portal_webservice.utils.Context;
 
 public class TeamService {
 	private TeamDao teamDao = new TeamDao();
+	private List<TeamBean> defaultAllTeam = null;
 	
 	public List<TeamBean> getAllTeams() throws QuizPortalWebServiceException{
 		List<TeamBean> allTeams = teamDao.getAllTeams();
@@ -19,9 +20,9 @@ public class TeamService {
 	}
 	
 	
-	public TeamBean getTeamByID(long teamID) throws QuizPortalWebServiceException{
+	public TeamBean getTeamByID(long teamID, List<TeamBean> allTeams) throws QuizPortalWebServiceException{
 		
-		List<TeamBean> allTeams = getAllTeams();
+		allTeams = (allTeams == null) ? getAllTeams() : allTeams;
 		for(TeamBean team : allTeams) {
 			if(team.getId() == teamID)
 				return team;
@@ -30,5 +31,9 @@ public class TeamService {
 		{
 			throw new QuizPortalWebServiceException(Context.ERROR_NO_TEAM_AVAILABLE + " for team ID : " + teamID);
 		}
+	}
+	
+	public TeamBean getTeamByID(long teamID) throws QuizPortalWebServiceException {
+		return getTeamByID(teamID, defaultAllTeam);
 	}
 }
