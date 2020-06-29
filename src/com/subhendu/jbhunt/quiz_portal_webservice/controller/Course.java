@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.google.gson.Gson;
 import com.subhendu.jbhunt.quiz_portal_webservice.beans.ResponceBean;
+import com.subhendu.jbhunt.quiz_portal_webservice.exception.QuizPortalWebServiceException;
 import com.subhendu.jbhunt.quiz_portal_webservice.service.CourseService;
 import com.subhendu.jbhunt.quiz_portal_webservice.utils.ResponceUtil;
 
@@ -41,7 +42,11 @@ public class Course extends HttpServlet {
 		PrintWriter pw = response.getWriter();
 		ResponceBean responceBean = null;
 		
-		responceBean = new ResponceBean("you are getting successfull responce from Course GET route ");
+		try {
+			responceBean = new ResponceBean(courseService.getAllCourses());
+		} catch (QuizPortalWebServiceException error) {
+			responceBean = new ResponceBean(error);
+		}
 		
 		pw.print(gson.toJson(responceBean));
 		pw.close();
