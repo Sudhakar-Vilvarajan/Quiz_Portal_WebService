@@ -1,5 +1,7 @@
 package com.subhendu.jbhunt.quiz_portal_webservice.beans;
 
+import java.util.Date;
+
 public class CourseBean {
 	private long id;
 	private String name;
@@ -7,7 +9,7 @@ public class CourseBean {
 	private int numberOfQuestions;
 	private int durationInMins;
 	private String createdBy;
-	private String createdDate;
+	private Date createdDate;
 	private TeamBean team;
 	public long getId() {
 		return id;
@@ -45,10 +47,10 @@ public class CourseBean {
 	public void setCreatedBy(String createdBy) {
 		this.createdBy = createdBy;
 	}
-	public String getCreatedDate() {
+	public Date getCreatedDate() {
 		return createdDate;
 	}
-	public void setCreatedDate(String createdDate) {
+	public void setCreatedDate(Date createdDate) {
 		this.createdDate = createdDate;
 	}
 	
@@ -59,7 +61,7 @@ public class CourseBean {
 				+ ", createdDate=" + createdDate + ", team=" + team + "]";
 	}
 	public CourseBean(long id, String name, String description, int numberOfQuestions, int durationInMins,
-			String createdBy, String createdDate, TeamBean team) {
+			String createdBy, Date createdDate, TeamBean team) {
 		super();
 		this.id = id;
 		this.name = name;
