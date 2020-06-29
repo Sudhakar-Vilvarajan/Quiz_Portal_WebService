@@ -47,7 +47,7 @@ public class CourseDao {
 			System.out.println("fetched all courses");
 		} 
 		catch (Exception e) {
-			throw new QuizPortalWebServiceException(Context.ERROR_FETCH_ALL_TEAMS + " -> " + e.getLocalizedMessage());
+			throw new QuizPortalWebServiceException(Context.ERROR_FETCH_ALL_COURSES + " -> " + e.getLocalizedMessage());
 		}
 		
 		excelUtil.closeWorkbook(workbook);

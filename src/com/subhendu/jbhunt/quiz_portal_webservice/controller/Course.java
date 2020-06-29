@@ -13,6 +13,8 @@ import com.google.gson.Gson;
 import com.subhendu.jbhunt.quiz_portal_webservice.beans.ResponceBean;
 import com.subhendu.jbhunt.quiz_portal_webservice.exception.QuizPortalWebServiceException;
 import com.subhendu.jbhunt.quiz_portal_webservice.service.CourseService;
+import com.subhendu.jbhunt.quiz_portal_webservice.utils.Context;
+import com.subhendu.jbhunt.quiz_portal_webservice.utils.RequestUtil;
 import com.subhendu.jbhunt.quiz_portal_webservice.utils.ResponceUtil;
 
 /**
@@ -43,7 +45,15 @@ public class Course extends HttpServlet {
 		ResponceBean responceBean = null;
 		
 		try {
-			responceBean = new ResponceBean(courseService.getAllCourses());
+			if(RequestUtil.hasParam(request, Context.COURSE_TEAMID))
+				responceBean = new ResponceBean(
+					courseService.getCoursesForTeamID(
+						RequestUtil.getParam(request, Context.COURSE_TEAMID),
+						courseService.getAllCourses()
+					)
+				);
+			else
+				responceBean = new ResponceBean(courseService.getAllCourses());
 		} catch (QuizPortalWebServiceException error) {
 			responceBean = new ResponceBean(error);
 		}

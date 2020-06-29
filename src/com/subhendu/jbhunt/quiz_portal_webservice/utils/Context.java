@@ -8,6 +8,10 @@ public class Context {
 	public static final String CourseTable = "Course";
 	
 	
+//	Query Parameters
+	public static final String COURSE_TEAMID = "teamID";
+	
+	
 	
 //	Error Messages
 	private static final String ERROR_INITIAL = "Error occured while ";

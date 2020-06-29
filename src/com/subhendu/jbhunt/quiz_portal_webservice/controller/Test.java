@@ -28,9 +28,9 @@ public class Test extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
     	PrintWriter pw = resp.getWriter();
     	pw.append("You hit the Root/Test GET route.")
-			.append("\nHas id embeded : "+RequestUtil.hasEmbeddedID(req));
+			.append("\nHas param : "+RequestUtil.hasParam(req, "teamID"));
     	try {
-			pw.append("\nID : "+ RequestUtil.getEmbededID(req));
+			pw.append("\nID : "+ RequestUtil.getParam(req, "teamID"));
 		} catch (QuizPortalWebServiceException e) {
 			pw.append("\nError : "+ e.getMessage());
 		}
