@@ -29,10 +29,10 @@ public class TeamDao {
 					TeamBean teamBean = new TeamBean();
 					
 					teamBean.setId((long)row.getCell(0).getNumericCellValue());
-					teamBean.setName(row.getCell(1).getStringCellValue());
-					teamBean.setCreatedBy(row.getCell(2).getStringCellValue());
+					teamBean.setName(row.getCell(1).getStringCellValue().trim());
+					teamBean.setCreatedBy(row.getCell(2).getStringCellValue().trim());
 					teamBean.setCreatedDate(row.getCell(3).getDateCellValue());
-					teamBean.setBackgroundImageURL(row.getCell(4).getStringCellValue());
+					teamBean.setBackgroundImageURL(row.getCell(4).getStringCellValue().trim());
 					
 					allTeams.add(teamBean);
 				}

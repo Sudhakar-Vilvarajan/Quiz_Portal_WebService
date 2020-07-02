@@ -34,11 +34,11 @@ public class CourseDao {
 					
 					courseBean.setId((long)row.getCell(0).getNumericCellValue());
 					courseBean.setTeam(teamService.getTeamByID((long)row.getCell(1).getNumericCellValue(), allTeams));
-					courseBean.setName(row.getCell(2).getStringCellValue());
-					courseBean.setDescription(row.getCell(3).getStringCellValue());
+					courseBean.setName(row.getCell(2).getStringCellValue().trim());
+					courseBean.setDescription(row.getCell(3).getStringCellValue().trim());
 					courseBean.setNumberOfQuestions((int)row.getCell(4).getNumericCellValue());
 					courseBean.setDurationInMins((int)row.getCell(5).getNumericCellValue());
-					courseBean.setCreatedBy(row.getCell(6).getStringCellValue());
+					courseBean.setCreatedBy(row.getCell(6).getStringCellValue().trim());
 					courseBean.setCreatedDate(row.getCell(7).getDateCellValue());
 					
 					allCourses.add(courseBean);

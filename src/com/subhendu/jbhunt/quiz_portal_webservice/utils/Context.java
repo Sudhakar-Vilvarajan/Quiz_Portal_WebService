@@ -6,6 +6,7 @@ public class Context {
 	public static final String dbpath = "/DB.xlsx"; 
 	public static final String TeamTable = "Team";
 	public static final String CourseTable = "Course";
+	public static final String QuestionTable = "Question";
 	
 	
 //	Query Parameters
@@ -19,6 +20,7 @@ public class Context {
 	public static final String ERROR_DISCONNECT_DB = ERROR_INITIAL + "disconnecting DB";
 	public static final String ERROR_FETCH_ALL_TEAMS = ERROR_INITIAL + "fetching all teams";
 	public static final String ERROR_FETCH_ALL_COURSES = ERROR_INITIAL + "fetching all courses";
+	public static final String ERROR_FETCH_ALL_QUESTIONS = ERROR_INITIAL + "fetching all questions";
 	
 	
 	public static final String ERROR_NO_TEAM_AVAILABLE = "No team available";

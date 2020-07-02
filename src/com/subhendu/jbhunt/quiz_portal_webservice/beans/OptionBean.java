@@ -23,7 +23,7 @@ public class OptionBean {
 	public OptionBean() {
 		super();
 	}
-	public OptionBean(String text, int indicator) {
+	public OptionBean(String text, double indicator) {
 		super();
 		this.text = text;
 		this.correct = indicator==1;

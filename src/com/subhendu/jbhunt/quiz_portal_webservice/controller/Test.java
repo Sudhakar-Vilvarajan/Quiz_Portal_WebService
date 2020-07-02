@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.subhendu.jbhunt.quiz_portal_webservice.dao.QuestionDao;
 import com.subhendu.jbhunt.quiz_portal_webservice.exception.QuizPortalWebServiceException;
 import com.subhendu.jbhunt.quiz_portal_webservice.utils.RequestUtil;
 
@@ -26,11 +27,11 @@ public class Test extends HttpServlet {
 //    
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    	QuestionDao q = new QuestionDao();
     	PrintWriter pw = resp.getWriter();
-    	pw.append("You hit the Root/Test GET route.")
-			.append("\nHas param : "+RequestUtil.hasParam(req, "teamID"));
+    	pw.append("You hit the Root/Test GET route.");
     	try {
-			pw.append("\nID : "+ RequestUtil.getParam(req, "teamID"));
+			pw.append("\nQuestions : "+ q.getAllQuestions());
 		} catch (QuizPortalWebServiceException e) {
 			pw.append("\nError : "+ e.getMessage());
 		}
