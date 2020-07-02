@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.google.gson.Gson;
 import com.subhendu.jbhunt.quiz_portal_webservice.beans.ResponceBean;
 import com.subhendu.jbhunt.quiz_portal_webservice.exception.QuizPortalWebServiceException;
-import com.subhendu.jbhunt.quiz_portal_webservice.service.TeamService;
+import com.subhendu.jbhunt.quiz_portal_webservice.services.TeamService;
 import com.subhendu.jbhunt.quiz_portal_webservice.utils.RequestUtil;
 import com.subhendu.jbhunt.quiz_portal_webservice.utils.ResponceUtil;
 

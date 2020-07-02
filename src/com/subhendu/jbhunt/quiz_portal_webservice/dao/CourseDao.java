@@ -11,7 +11,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import com.subhendu.jbhunt.quiz_portal_webservice.beans.CourseBean;
 import com.subhendu.jbhunt.quiz_portal_webservice.beans.TeamBean;
 import com.subhendu.jbhunt.quiz_portal_webservice.exception.QuizPortalWebServiceException;
-import com.subhendu.jbhunt.quiz_portal_webservice.service.TeamService;
+import com.subhendu.jbhunt.quiz_portal_webservice.services.TeamService;
 import com.subhendu.jbhunt.quiz_portal_webservice.utils.Context;
 import com.subhendu.jbhunt.quiz_portal_webservice.utils.ExcelUtil;
 

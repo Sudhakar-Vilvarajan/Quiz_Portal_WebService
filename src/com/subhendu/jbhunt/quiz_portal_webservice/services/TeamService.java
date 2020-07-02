@@ -1,4 +1,4 @@
-package com.subhendu.jbhunt.quiz_portal_webservice.service;
+package com.subhendu.jbhunt.quiz_portal_webservice.services;
 
 import java.util.List;
 
