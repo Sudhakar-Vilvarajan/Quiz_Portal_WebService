@@ -45,10 +45,10 @@ public class Course extends HttpServlet {
 		ResponceBean responceBean = null;
 		
 		try {
-			if(RequestUtil.hasParam(request, Context.COURSE_TEAMID))
+			if(RequestUtil.hasParam(request, Context.QP_COURSE_TEAMID))
 				responceBean = new ResponceBean(
 					courseService.getCoursesForTeamID(
-						RequestUtil.getParam(request, Context.COURSE_TEAMID),
+						RequestUtil.getParam(request, Context.QP_COURSE_TEAMID),
 						courseService.getAllCourses()
 					)
 				);

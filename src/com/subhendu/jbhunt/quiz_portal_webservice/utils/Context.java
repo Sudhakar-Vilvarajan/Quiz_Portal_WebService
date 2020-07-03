@@ -10,7 +10,8 @@ public class Context {
 	
 	
 //	Query Parameters
-	public static final String COURSE_TEAMID = "teamID";
+	public static final String QP_COURSE_TEAMID = "teamID";
+	public static final String QP_QUESTION_COURSEID = "courseID";
 	
 	
 	
@@ -25,6 +26,7 @@ public class Context {
 	
 	public static final String ERROR_NO_TEAM_AVAILABLE = "No team available";
 	public static final String ERROR_NO_COURSE_AVAILABLE = "No course available";
+	public static final String ERROR_NO_QUESTION_AVAILABLE = "No question available";
 	public static final String ERROR_ID_HAS_NO_PROVIDED = "ID has not provided";
 	public static final String ERROR_NO_A_VALID_ID = "Not a valid ID";
 }

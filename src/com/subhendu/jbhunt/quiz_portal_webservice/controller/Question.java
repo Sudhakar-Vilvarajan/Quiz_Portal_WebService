@@ -44,7 +44,23 @@ public class Question extends HttpServlet {
 		ResponceBean responceBean = null;
 		
 		try {
-			responceBean = new ResponceBean(questionService.getAllQuestions());
+			if(RequestUtil.hasParam(request, Context.QP_QUESTION_COURSEID)) {
+				responceBean = new ResponceBean(
+					questionService.getQuestionsForCourseID(
+						RequestUtil.getParam(request, Context.QP_QUESTION_COURSEID), 
+						questionService.getAllQuestions()
+					)
+				);
+			}
+//			else if(RequestUtil.hasEmbeddedID(request))
+//				responceBean = new ResponceBean(
+//					questionService.getQuestionsForCourseID(
+//						RequestUtil.getEmbededID(request),
+//						questionService.getAllQuestions()
+//					)
+//				);
+			else
+				responceBean = new ResponceBean(questionService.getAllQuestions());
 		} catch (QuizPortalWebServiceException error) {
 			responceBean = new ResponceBean(error);
 		}
