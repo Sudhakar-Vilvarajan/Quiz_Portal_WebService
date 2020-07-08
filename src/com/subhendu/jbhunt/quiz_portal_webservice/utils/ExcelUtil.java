@@ -14,7 +14,6 @@ public class ExcelUtil {
 		try {
 			URL url = getClass().getResource(Context.dbpath);
 			workbook =  new XSSFWorkbook(new FileInputStream(new File(url.getPath())));
-			System.out.println("Workbook opened");
 		}
 		catch (Exception e) {
 			throw new QuizPortalWebServiceException(Context.ERROR_CONNECT_DB + " -> " + e.getLocalizedMessage());
@@ -26,7 +25,6 @@ public class ExcelUtil {
 	public void closeWorkbook(XSSFWorkbook workbook) throws QuizPortalWebServiceException{
 		try {
 			workbook.close();
-			System.out.println("Workbook closed");
 		} 
 		catch (Exception e) {
 			throw new QuizPortalWebServiceException(Context.ERROR_DISCONNECT_DB + "->" + e.getLocalizedMessage());

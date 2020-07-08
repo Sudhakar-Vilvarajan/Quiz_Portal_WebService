@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
-Built-By: JISASG8
+Built-By: jisasg8
 Build-Jdk: 1.8.0_101
 Created-By: Maven Integration for Eclipse
 

@@ -31,8 +31,8 @@ public class QuestionDao {
 					
 					question.setId((long)row.getCell(0).getNumericCellValue());
 					question.setCourseID((long)row.getCell(1).getNumericCellValue());
-					question.setType(row.getCell(2).getStringCellValue().trim());
-					question.setText(row.getCell(3).getStringCellValue().trim());
+					question.setText(row.getCell(2).getStringCellValue().trim());
+					question.setType(row.getCell(3).getStringCellValue().trim());
 					
 					List<OptionBean> allOptions = new ArrayList<OptionBean>();
 					for(int i=4; i<=8; i++) {
@@ -52,7 +52,6 @@ public class QuestionDao {
 					allQuestion.add(question);
 				}
 			}
-			System.out.println("fetched all questions");
 		} 
 		catch (Exception e) {
 			throw new QuizPortalWebServiceException(Context.ERROR_FETCH_ALL_QUESTIONS + " -> " + e.getLocalizedMessage());

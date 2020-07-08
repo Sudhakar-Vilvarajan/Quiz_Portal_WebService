@@ -39,7 +39,6 @@ public class Course extends HttpServlet {
 	 */
     
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("Course GET route has been hit");
 		ResponceUtil.enrichResponceHeader(response);
 		PrintWriter pw = response.getWriter();
 		ResponceBean responceBean = null;
@@ -56,6 +55,7 @@ public class Course extends HttpServlet {
 				responceBean = new ResponceBean(courseService.getAllCourses());
 		} catch (QuizPortalWebServiceException error) {
 			responceBean = new ResponceBean(error);
+			error.printStackTrace();
 		}
 		
 		pw.print(gson.toJson(responceBean));

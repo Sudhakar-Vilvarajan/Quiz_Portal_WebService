@@ -44,7 +44,6 @@ public class CourseDao {
 					allCourses.add(courseBean);
 				}
 			}
-			System.out.println("fetched all courses");
 		} 
 		catch (Exception e) {
 			throw new QuizPortalWebServiceException(Context.ERROR_FETCH_ALL_COURSES + " -> " + e.getLocalizedMessage());

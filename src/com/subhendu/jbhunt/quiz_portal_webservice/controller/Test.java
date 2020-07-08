@@ -34,6 +34,7 @@ public class Test extends HttpServlet {
 			pw.append("\nQuestions : "+ q.getAllQuestions());
 		} catch (QuizPortalWebServiceException e) {
 			pw.append("\nError : "+ e.getMessage());
+			e.printStackTrace();
 		}
     	
     }

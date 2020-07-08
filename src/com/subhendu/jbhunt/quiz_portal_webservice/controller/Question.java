@@ -38,7 +38,6 @@ public class Question extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("Question GET route has been hit");
 		ResponceUtil.enrichResponceHeader(response);
 		PrintWriter pw = response.getWriter();
 		ResponceBean responceBean = null;
@@ -63,6 +62,7 @@ public class Question extends HttpServlet {
 				responceBean = new ResponceBean(questionService.getAllQuestions());
 		} catch (QuizPortalWebServiceException error) {
 			responceBean = new ResponceBean(error);
+			error.printStackTrace();
 		}
 		
 		pw.print(gson.toJson(responceBean));

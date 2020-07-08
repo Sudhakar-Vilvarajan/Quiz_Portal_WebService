@@ -37,7 +37,6 @@ public class TeamDao {
 					allTeams.add(teamBean);
 				}
 			}
-			System.out.println("fetched all teams");
 		} 
 		catch (Exception e) {
 			throw new QuizPortalWebServiceException(Context.ERROR_FETCH_ALL_TEAMS + " -> " + e.getLocalizedMessage());

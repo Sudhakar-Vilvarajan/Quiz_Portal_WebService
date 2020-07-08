@@ -37,7 +37,6 @@ public class Team extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("Team GET route has been hit");
 		ResponceUtil.enrichResponceHeader(response);
 		PrintWriter pw = response.getWriter();
 		ResponceBean responceBean = null;
@@ -50,6 +49,7 @@ public class Team extends HttpServlet {
 		}
 		catch (QuizPortalWebServiceException error) {
 			responceBean = new ResponceBean(error);
+			error.printStackTrace();
 		}
 		
 		pw.print(gson.toJson(responceBean));
